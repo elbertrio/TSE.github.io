@@ -929,7 +929,61 @@
     .hero-headline { font-size: 22px; }
     .footer-top { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr; }
+  
   }
+  /* --- RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 768px) {
+  /* 1. Sesuaikan Header */
+  .header-inner {
+    flex-direction: column; /* Susun logo dan tombol ke bawah */
+    padding: 15px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .header-date, .header-actions {
+    display: none; /* Sembunyikan tanggal & tombol cari di HP agar rapi */
+  }
+
+  .logo-name {
+    font-size: 32px !important; /* Perkecil logo sedikit */
+  }
+
+  /* 2. Sesuaikan Navigasi */
+  .main-nav {
+    overflow-x: auto; /* Biar menu bisa di-swipe ke samping jika kepanjangan */
+    white-space: nowrap;
+    padding: 10px 5px;
+  }
+
+  .nav-inner {
+    justify-content: flex-start;
+    gap: 15px;
+  }
+
+  /* 3. Sesuaikan Konten Utama (Hero) */
+  .hero-grid {
+    grid-template-columns: 1fr !important; /* Ubah dari 2 kolom jadi 1 kolom saja */
+  }
+
+  .hero-img-container {
+    height: 250px; /* Perkecil tinggi gambar di HP */
+  }
+
+  .hero-title {
+    font-size: 28px !important; /* Perkecil ukuran judul berita utama */
+  }
+
+  /* 4. Sesuaikan Analisis Mendalam (Grid) */
+  .articles-grid {
+    grid-template-columns: 1fr !important; /* Gambar & judul jadi satu baris panjang */
+  }
+
+  /* 5. Sesuaikan Footer */
+  .logo-name {
+    font-size: 38px !important; /* Sesuaikan logo footer di mobile */
+  }
+}
 </style>
 </head>
 <body>
