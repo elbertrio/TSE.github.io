@@ -124,7 +124,7 @@
     line-height: 1;
     display: block;
   }
-  .logo-name span { color: var(--RED); }
+  .logo-name span { color: var(--red); }
   .logo-tagline {
     font-family: var(--font-ui);
     font-size: 10px;
@@ -1000,7 +1000,7 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="header-date">
-      <div style="font-weight:600;color:var(--dark);font-size:13px;">Senin, 13 April 2026</div>
+      <div style="font-weight:600;color:var(--dark);font-size:13px;" id="current-date">Memuat tanggal...</div>
       <div>Edisi Digital &mdash; Jakarta</div>
     </div>
     <div class="logo-block" onclick="showPage('home')" style="cursor:pointer;">
@@ -1802,6 +1802,22 @@
   </div>
 </footer>
 
+<script>
+  function updateDate() {
+    const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+    const today = new Date();
+    // Mengubah tanggal menjadi format Indonesia
+    const dateString = today.toLocaleDateString('id-ID', options);
+    
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+      dateElement.innerText = dateString;
+    }
+  }
+  
+  // Menjalankan fungsi saat halaman dimuat
+  updateDate();
+</script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 // 1. FUNGSI NAVIGASI (UTAMA)
